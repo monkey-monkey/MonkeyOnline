@@ -28,8 +28,10 @@
     "interface-over-type-literal": true,
     "label-position": true,
     "max-line-length": [
-      true,
-      140
+      true,{
+        "limit": 140,
+        "ignore-pattern": "^import"
+      }
     ],
     "member-access": false,
     "member-ordering": [
