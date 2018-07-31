@@ -1,0 +1,15 @@
+<div class="flex-row" style="justify-content: center;align-items: center;height: 100%;">
+  <mat-card>
+    <div class="flex-col">
+      <label style="margin-top: 8px;">จำนวนข้อ : {{n}}</label>
+      <label style="margin-top: 8px;">ใช้เวลารวม : {{time}} วินาที</label>
+      <label style="margin-top: 8px;">จำนวนข้อถูก : {{correct}}</label>
+      <label style="margin-top: 8px;">จำนวนข้อผิด : {{incorrect}}</label>
+      <label style="margin-top: 8px;" *ngIf="incorrectInfo.length>0">ข้อที่ผิด : </label>
+      <label *ngFor="let i of incorrectInfo;index as index">{{index+1}} : {{i.statement}} ( ตอบ {{i.answer===null?'ไม่ทัน':i.answer}} ที่ถูกคือ {{i.expect}} )</label>
+      <div class="flex-row" style="justify-content: center;margin-top: 8px;">
+      <button mat-raised-button (click)="back()">BACK</button>
+      </div>
+    </div>
+  </mat-card>
+</div>

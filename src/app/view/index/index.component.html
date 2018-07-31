@@ -1,0 +1,49 @@
+<div class="flex-row" style="align-items: center;justify-content: center;height: 100%;">
+  <div class="flex-col" style="box-shadow: 1px 1px 4px rgba(0,0,0,0.3);width: 600px">
+    <div style="background-color: #FFB300;width: 100%">
+      <div style="padding: 24px;">
+        <label style="font-size: 2em;font-weight: 500;">Setting</label>
+      </div>
+    </div>
+    <div class="flex-col" style="flex:1;background-color: white;padding: 16px;">
+      <mat-form-field>
+        <mat-select placeholder="จำนวนพจน์" [(ngModel)]="n" (ngModelChange)="generateRange()">
+          <mat-option [value]="2">
+            2
+          </mat-option>
+          <mat-option [value]="3">
+            3
+          </mat-option>
+          <mat-option [value]="4">
+            4
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div *ngFor="let r of range;index as index">
+        พจน์ที่ {{index+1}} :
+        <mat-form-field style="margin-left: 16px;">
+          <input matInput placeholder="From" [(ngModel)]="range[index].from">
+        </mat-form-field>
+        <mat-form-field style="margin-left: 16px;">
+          <input matInput placeholder="To" [(ngModel)]="range[index].to">
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <input matInput placeholder="Countdown (second)" [(ngModel)]="countdown">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="จำนวนข้อ" [(ngModel)]="number">
+        </mat-form-field>
+      <label style="font-weight: 500">Operation</label>
+      <section class="flex-col" style="margin-left: 32px">
+        <mat-checkbox style="margin-top:8px" [(ngModel)]="plus">Plus ( + )</mat-checkbox>
+        <mat-checkbox style="margin-top:8px" [(ngModel)]="minus">Minus ( - )</mat-checkbox>
+        <mat-checkbox style="margin-top:8px" [(ngModel)]="multiply">Multiply ( x )</mat-checkbox>
+        <mat-checkbox style="margin-top:8px" [(ngModel)]="divide">Divide ( ÷ )</mat-checkbox>
+      </section>
+      <div class="flex-row" style="justify-content: center">
+        <button mat-raised-button style="background-color: #00838F;color: white" (click)="go()">GO</button>
+      </div>
+    </div>
+  </div>
+</div>

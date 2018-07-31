@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+$monkey-app-primary: mat-palette($mat-amber, 600);
+$monkey-app-accent: mat-palette($mat-cyan, 800);
+$monkey-app-warn: mat-palette($mat-red);
+$monkey-app-theme: mat-light-theme($monkey-app-primary, $monkey-app-accent, $monkey-app-warn);
+@include angular-material-theme($monkey-app-theme);
+
+body {
+  background-color: #EEEEEE;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.flex-col {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
