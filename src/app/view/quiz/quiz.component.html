@@ -1,7 +1,10 @@
-<div [class]="isMobile?'flex-col':'flex-row'" style="height: 100%; justify-content: space-around; align-items: center;overflow: auto">
+<div [class]="isMobile?'flex-col':'flex-row'" style="justify-content: space-around; align-items: center;">
   <div style="padding: 24px">
     <mat-card>
-      <label style="font-size: 4em;font-weight: 500">{{quizs[current]?.statement}}</label>
+      <div class="flex-col">
+        <label style="font-size: 4em;font-weight: 500" *ngIf="quizs[current]">ข้อที่ {{current+1}} : </label>
+        <label style="font-size: 4em;font-weight: 500">{{quizs[current]?.statement}}</label>
+      </div>
     </mat-card>
   </div>
   <div style="padding: 24px">

@@ -13,6 +13,7 @@ export class IndexComponent implements OnInit {
   minus = true;
   multiply = false;
   divide = false;
+  type = 'mixed';
   countdown = 4;
   range = [];
   number = 5;
@@ -52,12 +53,17 @@ export class IndexComponent implements OnInit {
     if (this.multiply) {
       operation.push('multiply');
     }
-    this.quizService.generateQuiz({
-      n: this.range,
-      operation,
-      countdown: Math.floor(Number(this.countdown) * 10),
-      number: Number(this.number)
-    });
-    this.router.navigate(['quiz']);
+    try {
+      this.quizService.generateQuiz({
+        n: this.range,
+        operation,
+        countdown: Math.floor(Number(this.countdown) * 10),
+        number: Number(this.number),
+        type: this.type
+      });
+      this.router.navigate(['quiz']);
+    } catch (e) {
+      alert('การตั้งค่าเป็นไปได้ยากหรือเป็นไปไม่ได้ กรุณาตรวจสอบอีกครั้ง');
+    }
   }
 }

@@ -1,4 +1,4 @@
-<div class="flex-row" style="align-items: center;justify-content: center;height: 100%;">
+<div class="flex-row" style="align-items: center;justify-content: center;">
   <div class="flex-col" style="box-shadow: 1px 1px 4px rgba(0,0,0,0.3);width: 600px">
     <div style="background-color: #FFB300;width: 100%">
       <div style="padding: 24px;">
@@ -19,6 +19,19 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <mat-form-field>
+          <mat-select placeholder="ชนิดคำตอบ" [(ngModel)]="type">
+            <mat-option value="mixed">
+              ทั้งจำนวนบวกและจำนวนลบ
+            </mat-option>
+            <mat-option value="positive">
+              จำนวนบวกเท่านั้น
+            </mat-option>
+            <mat-option value="negative">
+              จำนวนลบเท่านั้น
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       <div *ngFor="let r of range;index as index">
         พจน์ที่ {{index+1}} :
         <mat-form-field style="margin-left: 16px;">
