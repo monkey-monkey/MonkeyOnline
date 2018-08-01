@@ -42,7 +42,7 @@ export class QuizComponent implements OnInit, OnDestroy {
   submit(e) {
     if (this.current < this.quizs.length) {
       this.quizs[this.current].answer = e;
-      this.quizs[this.current].time = (this.quizService.countdown - this.countdown) / 10;
+      this.quizs[this.current].time = this.quizService.countdown - this.countdown;
       this.countdown = this.quizService.countdown;
       this.current += 1;
     }
