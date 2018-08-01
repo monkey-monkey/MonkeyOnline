@@ -16,7 +16,9 @@ export class OnscreenKeyboardComponent implements OnInit {
     this.val = '';
   }
   add(num) {
-    this.val += num;
+    window.requestAnimationFrame(() => {
+      this.val += num;
+    });
   }
   del() {
     if (this.val.length > 0) {

@@ -1,5 +1,5 @@
 <mat-form-field style="width: 100%">
-  <input style="font-size: 2em;" autofocus matInput placeholder="คำตอบ" [(ngModel)]="val" (keydown)="key($event)">
+  <input style="font-size: 2em;" matInput placeholder="คำตอบ" [(ngModel)]="val" (keydown)="key($event)">
   <div matSuffix style="padding: 8px;" (click)="del()">
   <mat-icon svgIcon='keyboard_arrow_left'></mat-icon>
   </div>
